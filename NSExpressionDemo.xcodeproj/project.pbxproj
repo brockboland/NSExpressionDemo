@@ -12,6 +12,8 @@
 		46006EED1CF53157003C8750 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46006EEC1CF53157003C8750 /* Assets.xcassets */; };
 		46006EF01CF53157003C8750 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46006EEE1CF53157003C8750 /* LaunchScreen.storyboard */; };
 		46006EF91CF53191003C8750 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46006EF71CF53191003C8750 /* DataModel.xcdatamodeld */; };
+		46006EFC1CF53475003C8750 /* Game+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46006EFA1CF53475003C8750 /* Game+CoreDataProperties.swift */; };
+		46006EFD1CF53475003C8750 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46006EFB1CF53475003C8750 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		46006EEF1CF53157003C8750 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46006EF11CF53157003C8750 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46006EF81CF53191003C8750 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		46006EFA1CF53475003C8750 /* Game+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Game+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		46006EFB1CF53475003C8750 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 		46006EE21CF53157003C8750 /* NSExpressionDemo */ = {
 			isa = PBXGroup;
 			children = (
+				46006EFA1CF53475003C8750 /* Game+CoreDataProperties.swift */,
+				46006EFB1CF53475003C8750 /* Game.swift */,
 				46006EE31CF53157003C8750 /* AppDelegate.swift */,
 				46006EE91CF53157003C8750 /* Main.storyboard */,
 				46006EEC1CF53157003C8750 /* Assets.xcassets */,
@@ -137,6 +143,8 @@
 			files = (
 				46006EF91CF53191003C8750 /* DataModel.xcdatamodeld in Sources */,
 				46006EE41CF53157003C8750 /* AppDelegate.swift in Sources */,
+				46006EFC1CF53475003C8750 /* Game+CoreDataProperties.swift in Sources */,
+				46006EFD1CF53475003C8750 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
