@@ -10,6 +10,16 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+    private enum CSVField: Int {
+        case
+        GameNumber,
+        Date,
+        Opponent,
+        Runs,
+        RunsAgainst,
+        Attendees
+    }
+
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -41,7 +51,27 @@ private extension BaseViewController {
             return
         }
 
-        
+        let coreDataManager = CoreDataManager()
+
+        for line in lines {
+            let fields = line.componentsSeparatedByString(",")
+            
+            let game = coreDataManager.newGame()
+            game.gameNumber = self.intFromString(fields[CSVField.GameNumber.rawValue])
+            game.date = self.dateFromString(fields[CSVField.Date.rawValue])
+            game.opponent = fields[CSVField.Opponent.rawValue]
+            game.runs = self.intFromString(fields[CSVField.Runs.rawValue])
+            game.runsAgainst = self.intFromString(fields[CSVField.RunsAgainst.rawValue])
+            game.attendees = self.intFromString(fields[CSVField.Attendees.rawValue])
+        }
+    }
+
+    private func intFromString(string: String?) -> Int {
+        return Formatters.intFormatter.numberFromString(string ?? "")?.integerValue ?? 0
+    }
+
+    private func dateFromString(string: String?) -> NSDate {
+        return Formatters.dateFormatter.dateFromString(string ?? "") ?? NSDate()
     }
 
 }
