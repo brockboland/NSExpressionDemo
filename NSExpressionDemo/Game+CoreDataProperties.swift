@@ -15,8 +15,9 @@ import CoreData
 extension Game {
 
     @NSManaged var opponent: String?
-    @NSManaged var runs: NSNumber?
-    @NSManaged var runsAgainst: NSNumber?
-    @NSManaged var date: NSDate?
+    @NSManaged var runs: Int64
+    @NSManaged var runsAgainst: Int64
+    @NSManaged var date: NSTimeInterval
+    @NSManaged var attendees: Int64
 
 }
