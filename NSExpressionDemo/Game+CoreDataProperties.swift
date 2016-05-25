@@ -19,5 +19,6 @@ extension Game {
     @NSManaged var runsAgainst: Int64
     @NSManaged var date: NSTimeInterval
     @NSManaged var attendees: Int64
+    @NSManaged var gameNumber: Int64
 
 }
