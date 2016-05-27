@@ -25,4 +25,10 @@ struct Formatters {
         return formatter
     }()
 
+    static let friendlyDateFormatter: NSDateFormatter = {
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = .ShortStyle
+        return formatter
+    }()
+
 }

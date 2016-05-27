@@ -17,9 +17,8 @@
 		46006F081CF5406E003C8750 /* SQLLiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46006F071CF5406E003C8750 /* SQLLiteViewController.swift */; };
 		46006F0A1CF54098003C8750 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46006F091CF54098003C8750 /* BaseViewController.swift */; };
 		46006F0C1CF540B6003C8750 /* InMemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46006F0B1CF540B6003C8750 /* InMemoryViewController.swift */; };
-		46006F0E1CF540CA003C8750 /* XMLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46006F0D1CF540CA003C8750 /* XMLViewController.swift */; };
+		46006F0E1CF540CA003C8750 /* BinaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46006F0D1CF540CA003C8750 /* BinaryViewController.swift */; };
 		46006F101CF545CA003C8750 /* 2015data.csv in Resources */ = {isa = PBXBuildFile; fileRef = 46006F0F1CF545CA003C8750 /* 2015data.csv */; };
-		46006F121CF5473C003C8750 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46006F111CF5473C003C8750 /* CoreDataManager.swift */; };
 		46006F141CF54896003C8750 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46006F131CF54896003C8750 /* Formatters.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,9 +35,8 @@
 		46006F071CF5406E003C8750 /* SQLLiteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLLiteViewController.swift; sourceTree = "<group>"; };
 		46006F091CF54098003C8750 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		46006F0B1CF540B6003C8750 /* InMemoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InMemoryViewController.swift; sourceTree = "<group>"; };
-		46006F0D1CF540CA003C8750 /* XMLViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLViewController.swift; sourceTree = "<group>"; };
+		46006F0D1CF540CA003C8750 /* BinaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryViewController.swift; sourceTree = "<group>"; };
 		46006F0F1CF545CA003C8750 /* 2015data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2015data.csv; sourceTree = "<group>"; };
-		46006F111CF5473C003C8750 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		46006F131CF54896003C8750 /* Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,14 +74,13 @@
 				46006F021CF537CA003C8750 /* Game+CoreDataProperties.swift */,
 				46006F031CF537CA003C8750 /* Game.swift */,
 				46006EE31CF53157003C8750 /* AppDelegate.swift */,
+				46006F131CF54896003C8750 /* Formatters.swift */,
 				46006F0F1CF545CA003C8750 /* 2015data.csv */,
 				46006EE91CF53157003C8750 /* Main.storyboard */,
 				46006EEC1CF53157003C8750 /* Assets.xcassets */,
 				46006EEE1CF53157003C8750 /* LaunchScreen.storyboard */,
 				46006EF11CF53157003C8750 /* Info.plist */,
 				46006EF71CF53191003C8750 /* DataModel.xcdatamodeld */,
-				46006F111CF5473C003C8750 /* CoreDataManager.swift */,
-				46006F131CF54896003C8750 /* Formatters.swift */,
 			);
 			path = NSExpressionDemo;
 			sourceTree = "<group>";
@@ -94,7 +91,7 @@
 				46006F091CF54098003C8750 /* BaseViewController.swift */,
 				46006F071CF5406E003C8750 /* SQLLiteViewController.swift */,
 				46006F0B1CF540B6003C8750 /* InMemoryViewController.swift */,
-				46006F0D1CF540CA003C8750 /* XMLViewController.swift */,
+				46006F0D1CF540CA003C8750 /* BinaryViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -173,11 +170,10 @@
 			files = (
 				46006F081CF5406E003C8750 /* SQLLiteViewController.swift in Sources */,
 				46006F0C1CF540B6003C8750 /* InMemoryViewController.swift in Sources */,
-				46006F0E1CF540CA003C8750 /* XMLViewController.swift in Sources */,
+				46006F0E1CF540CA003C8750 /* BinaryViewController.swift in Sources */,
 				46006EF91CF53191003C8750 /* DataModel.xcdatamodeld in Sources */,
 				46006EE41CF53157003C8750 /* AppDelegate.swift in Sources */,
 				46006F041CF537CA003C8750 /* Game+CoreDataProperties.swift in Sources */,
-				46006F121CF5473C003C8750 /* CoreDataManager.swift in Sources */,
 				46006F051CF537CA003C8750 /* Game.swift in Sources */,
 				46006F141CF54896003C8750 /* Formatters.swift in Sources */,
 				46006F0A1CF54098003C8750 /* BaseViewController.swift in Sources */,
@@ -330,6 +326,7 @@
 				46006EF61CF53157003C8750 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

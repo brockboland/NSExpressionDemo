@@ -1,5 +1,5 @@
 //
-//  InMemoryViewController.swift
+//  BinaryViewController.swift
 //  NSExpressionDemo
 //
 //  Created by Brock Boland on 5/24/16.
@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class InMemoryViewController: BaseViewController {
+class BinaryViewController: BaseViewController {
 
     override func viewDidLoad() {
         self.managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
@@ -22,13 +22,20 @@ class InMemoryViewController: BaseViewController {
         }
         let psc = NSPersistentStoreCoordinator(managedObjectModel: mom)
         self.managedObjectContext.persistentStoreCoordinator = psc
-        do {
-            try psc.addPersistentStoreWithType(NSInMemoryStoreType,
-                                               configuration: nil,
-                                               URL: nil,
-                                               options: nil)
-        } catch {
-            fatalError("Error migrating store: \(error)")
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
+            let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+            guard let docURL = urls.last else {
+                fatalError("Couldn't find doc directory")
+            }
+            let storeURL = docURL.URLByAppendingPathComponent("Binary")
+            do {
+                try psc.addPersistentStoreWithType(NSBinaryStoreType,
+                                                   configuration: nil,
+                                                   URL: storeURL,
+                                                   options: nil)
+            } catch {
+                fatalError("Error migrating store: \(error)")
+            }
         }
 
         // Handle the common loading after setting up the core data stack

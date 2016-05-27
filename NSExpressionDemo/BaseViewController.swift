@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class BaseViewController: UIViewController {
 
@@ -22,12 +23,40 @@ class BaseViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
+    var managedObjectContext: NSManagedObjectContext!
+
+    private var games: [Game] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadGameData()
+
+        let fetchRequest = NSFetchRequest(entityName: "Game")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "opponent", ascending: true)]
+        let results = try? self.managedObjectContext.executeFetchRequest(fetchRequest)
+        self.games = results as? [Game] ?? []
+
+        self.tableView.reloadData()
+        self.tableView.dataSource = self
     }
 
 }
+
+//MARK: IBActions
+
+private extension BaseViewController {
+
+    @IBAction func calculateSum() {
+        self.showAlert("Sum!")
+    }
+
+    @IBAction func calculateAverage() {
+        self.showAlert("Average!")
+    }
+
+}
+
+//MARK: Data loading
 
 private extension BaseViewController {
 
@@ -51,12 +80,16 @@ private extension BaseViewController {
             return
         }
 
-        let coreDataManager = CoreDataManager()
-
         for line in lines {
             let fields = line.componentsSeparatedByString(",")
+            guard fields.count == 6 else {
+                print("Not enough fields on line")
+                continue
+            }
             
-            let game = coreDataManager.newGame()
+            let game = NSEntityDescription.insertNewObjectForEntityForName("Game",
+                                                                           inManagedObjectContext: self.managedObjectContext) as! Game
+
             game.gameNumber = self.intFromString(fields[CSVField.GameNumber.rawValue])
             game.date = self.dateFromString(fields[CSVField.Date.rawValue])
             game.opponent = fields[CSVField.Opponent.rawValue]
@@ -72,6 +105,39 @@ private extension BaseViewController {
 
     private func dateFromString(string: String?) -> NSDate {
         return Formatters.dateFormatter.dateFromString(string ?? "") ?? NSDate()
+    }
+
+}
+
+//MARK: Error
+extension BaseViewController {
+
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: nil,
+                                      message: message,
+                                      preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+
+}
+
+//MARK: UITableViewDataSource
+extension BaseViewController: UITableViewDataSource {
+
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.games.count
+    }
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .Value1, reuseIdentifier: nil)
+
+        let game = self.games[indexPath.row]
+
+        let date = Formatters.friendlyDateFormatter.stringFromDate(game.date)
+        cell.textLabel?.text = (game.opponent ?? "") + " on \(date)"
+        cell.detailTextLabel?.text = "\(game.runs) - \(game.runsAgainst)"
+        return cell
     }
 
 }

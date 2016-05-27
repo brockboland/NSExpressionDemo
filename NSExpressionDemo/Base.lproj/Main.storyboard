@@ -36,9 +36,49 @@
                     <view key="view" contentMode="scaleToFill" id="ugv-xd-J1o">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aGA-Mh-Mxd">
+                                <rect key="frame" x="0.0" y="70" width="600" height="481"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xan-8F-7rS">
+                                <rect key="frame" x="0.0" y="20" width="600" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gi3-oj-FYe">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                        <state key="normal" title="Average"/>
+                                        <connections>
+                                            <action selector="calculateAverage" destination="3jz-n3-KQy" eventType="touchUpInside" id="AJa-tG-bnr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V43-df-GQm">
+                                        <rect key="frame" x="300" y="0.0" width="300" height="50"/>
+                                        <state key="normal" title="Sum"/>
+                                        <connections>
+                                            <action selector="calculateSum" destination="3jz-n3-KQy" eventType="touchUpInside" id="nPd-dI-TC1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Gid-hw-1aI"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xan-8F-7rS" firstAttribute="leading" secondItem="ugv-xd-J1o" secondAttribute="leading" id="GFM-K2-Mqu"/>
+                            <constraint firstItem="aGA-Mh-Mxd" firstAttribute="leading" secondItem="ugv-xd-J1o" secondAttribute="leading" id="I4J-qf-usB"/>
+                            <constraint firstAttribute="trailing" secondItem="aGA-Mh-Mxd" secondAttribute="trailing" id="IwN-6A-9UK"/>
+                            <constraint firstItem="aGA-Mh-Mxd" firstAttribute="top" secondItem="xan-8F-7rS" secondAttribute="bottom" id="YzU-qm-t24"/>
+                            <constraint firstItem="Wen-Ov-nNn" firstAttribute="top" secondItem="aGA-Mh-Mxd" secondAttribute="bottom" id="clp-FU-zeJ"/>
+                            <constraint firstAttribute="trailing" secondItem="xan-8F-7rS" secondAttribute="trailing" id="h00-ZZ-ipw"/>
+                            <constraint firstItem="xan-8F-7rS" firstAttribute="top" secondItem="ODK-er-Rff" secondAttribute="bottom" id="yB1-mc-WHc"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="SQL" id="7NP-kh-Sa3"/>
+                    <connections>
+                        <outlet property="tableView" destination="aGA-Mh-Mxd" id="uzW-KO-c2D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A8j-i2-sC0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -55,9 +95,51 @@
                     <view key="view" contentMode="scaleToFill" id="Kyb-B1-KBf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DTM-zz-8Xn">
+                                <rect key="frame" x="0.0" y="20" width="600" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VeX-jZ-tJA">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                        <state key="normal" title="Average"/>
+                                        <connections>
+                                            <action selector="calculateAverage" destination="4yq-xO-ppL" eventType="touchUpInside" id="L9V-3u-9ZT"/>
+                                            <action selector="calculateAverage" destination="3jz-n3-KQy" eventType="touchUpInside" id="Pm8-2w-UTh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0VR-aP-8lp">
+                                        <rect key="frame" x="300" y="0.0" width="300" height="50"/>
+                                        <state key="normal" title="Sum"/>
+                                        <connections>
+                                            <action selector="calculateSum" destination="3jz-n3-KQy" eventType="touchUpInside" id="XRn-Yv-yCP"/>
+                                            <action selector="calculateSum" destination="4yq-xO-ppL" eventType="touchUpInside" id="tja-jJ-AuQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="vSA-i8-utp"/>
+                                </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EN8-2A-k89">
+                                <rect key="frame" x="0.0" y="70" width="600" height="481"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EN8-2A-k89" firstAttribute="leading" secondItem="Kyb-B1-KBf" secondAttribute="leading" id="Kzf-mg-7Jo"/>
+                            <constraint firstItem="DTM-zz-8Xn" firstAttribute="leading" secondItem="Kyb-B1-KBf" secondAttribute="leading" id="U5G-o9-jgw"/>
+                            <constraint firstItem="EN8-2A-k89" firstAttribute="top" secondItem="DTM-zz-8Xn" secondAttribute="bottom" id="Ukt-Ou-viK"/>
+                            <constraint firstItem="DTM-zz-8Xn" firstAttribute="top" secondItem="QJ5-b9-3gM" secondAttribute="bottom" id="XON-03-vqk"/>
+                            <constraint firstAttribute="trailing" secondItem="DTM-zz-8Xn" secondAttribute="trailing" id="lNk-KP-BwK"/>
+                            <constraint firstAttribute="trailing" secondItem="EN8-2A-k89" secondAttribute="trailing" id="tRD-Sw-Okv"/>
+                            <constraint firstItem="Bhp-tJ-Yg7" firstAttribute="top" secondItem="EN8-2A-k89" secondAttribute="bottom" id="yHE-mz-792"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="In Memory" id="TWD-Do-0rE"/>
+                    <connections>
+                        <outlet property="tableView" destination="EN8-2A-k89" id="4KS-DF-oyw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KXD-iF-7Ix" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -66,7 +148,7 @@
         <!--XML-->
         <scene sceneID="oD9-dd-TId">
             <objects>
-                <viewController id="ffP-VM-FOl" customClass="XMLViewController" customModule="NSExpressionDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ffP-VM-FOl" customClass="BinaryViewController" customModule="NSExpressionDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lrV-35-9cv"/>
                         <viewControllerLayoutGuide type="bottom" id="PDq-dV-DRI"/>
@@ -74,9 +156,51 @@
                     <view key="view" contentMode="scaleToFill" id="kOp-E0-bbj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="K0q-lD-B86">
+                                <rect key="frame" x="0.0" y="20" width="600" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0G-Zd-wfq">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                        <state key="normal" title="Average"/>
+                                        <connections>
+                                            <action selector="calculateAverage" destination="ffP-VM-FOl" eventType="touchUpInside" id="Q5m-5F-YPO"/>
+                                            <action selector="calculateAverage" destination="3jz-n3-KQy" eventType="touchUpInside" id="zM3-Vn-aqv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUa-yE-zQ3">
+                                        <rect key="frame" x="300" y="0.0" width="300" height="50"/>
+                                        <state key="normal" title="Sum"/>
+                                        <connections>
+                                            <action selector="calculateSum" destination="ffP-VM-FOl" eventType="touchUpInside" id="NnX-EA-10i"/>
+                                            <action selector="calculateSum" destination="3jz-n3-KQy" eventType="touchUpInside" id="c5M-AB-WCR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="fth-ev-tuc"/>
+                                </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="W9R-IS-wFf">
+                                <rect key="frame" x="0.0" y="70" width="600" height="481"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="W9R-IS-wFf" firstAttribute="top" secondItem="K0q-lD-B86" secondAttribute="bottom" id="0XA-hs-Pe6"/>
+                            <constraint firstItem="PDq-dV-DRI" firstAttribute="top" secondItem="W9R-IS-wFf" secondAttribute="bottom" id="80j-uH-vGt"/>
+                            <constraint firstItem="W9R-IS-wFf" firstAttribute="leading" secondItem="kOp-E0-bbj" secondAttribute="leading" id="Ecp-u3-3W4"/>
+                            <constraint firstItem="K0q-lD-B86" firstAttribute="leading" secondItem="kOp-E0-bbj" secondAttribute="leading" id="Msy-Eb-HcL"/>
+                            <constraint firstAttribute="trailing" secondItem="W9R-IS-wFf" secondAttribute="trailing" id="V2o-vw-DuV"/>
+                            <constraint firstItem="K0q-lD-B86" firstAttribute="top" secondItem="lrV-35-9cv" secondAttribute="bottom" id="mt6-4C-VHG"/>
+                            <constraint firstAttribute="trailing" secondItem="K0q-lD-B86" secondAttribute="trailing" id="w0c-hb-ycg"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="XML" id="sWO-NW-AAs"/>
+                    <connections>
+                        <outlet property="tableView" destination="W9R-IS-wFf" id="tAX-zg-D8X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKH-5R-0UF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
