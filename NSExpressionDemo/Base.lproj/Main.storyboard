@@ -145,7 +145,7 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="793"/>
         </scene>
-        <!--XML-->
+        <!--Binary-->
         <scene sceneID="oD9-dd-TId">
             <objects>
                 <viewController id="ffP-VM-FOl" customClass="BinaryViewController" customModule="NSExpressionDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -197,7 +197,7 @@
                             <constraint firstAttribute="trailing" secondItem="K0q-lD-B86" secondAttribute="trailing" id="w0c-hb-ycg"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="XML" id="sWO-NW-AAs"/>
+                    <tabBarItem key="tabBarItem" title="Binary" id="sWO-NW-AAs"/>
                     <connections>
                         <outlet property="tableView" destination="W9R-IS-wFf" id="tAX-zg-D8X"/>
                     </connections>

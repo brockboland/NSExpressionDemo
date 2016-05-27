@@ -47,11 +47,50 @@ class BaseViewController: UIViewController {
 private extension BaseViewController {
 
     @IBAction func calculateSum() {
-        self.showAlert("Sum!")
+        let sumFieldName = "sumField"
+
+        let expressionDescription = NSExpressionDescription()
+        expressionDescription.name = sumFieldName
+        expressionDescription.expressionResultType = .Integer64AttributeType
+        expressionDescription.expression = NSExpression(forFunction: "sum:",
+                                                        arguments:[NSExpression(forKeyPath: "runs")])
+
+        let fetchRequest = NSFetchRequest(entityName: "Game")
+        fetchRequest.propertiesToFetch = [expressionDescription]
+        fetchRequest.resultType = .DictionaryResultType
+
+        let results = try? self.managedObjectContext.executeFetchRequest(fetchRequest)
+
+        guard let
+            resultDict = results?.first as? [String: Int],
+            sum = resultDict[sumFieldName] else {
+                self.showAlert("FAIL")
+                return
+        }
+        self.showAlert("Total: \(sum) runs")
     }
 
     @IBAction func calculateAverage() {
-        self.showAlert("Average!")
+        let averageFieldName = "averageField"
+        let expressionDescription = NSExpressionDescription()
+        expressionDescription.name = averageFieldName
+        expressionDescription.expressionResultType = .FloatAttributeType
+        expressionDescription.expression = NSExpression(forFunction: "average:",
+                                                        arguments:[NSExpression(forKeyPath: "runs")])
+
+        let fetchRequest = NSFetchRequest(entityName: "Game")
+        fetchRequest.propertiesToFetch = [expressionDescription]
+        fetchRequest.resultType = .DictionaryResultType
+
+        let results = try? self.managedObjectContext.executeFetchRequest(fetchRequest)
+
+        guard let
+            resultDict = results?.first as? [String: AnyObject],
+            average = resultDict[averageFieldName] else {
+                self.showAlert("FAIL")
+                return
+        }
+        self.showAlert("Average: \(average) runs")
     }
 
 }
@@ -97,6 +136,8 @@ private extension BaseViewController {
             game.runsAgainst = self.intFromString(fields[CSVField.RunsAgainst.rawValue])
             game.attendees = self.intFromString(fields[CSVField.Attendees.rawValue])
         }
+
+        try? self.managedObjectContext.save()
     }
 
     private func intFromString(string: String?) -> Int {
