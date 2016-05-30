@@ -31,4 +31,20 @@ struct Formatters {
         return formatter
     }()
 
+    static let basicDateTimeFormatter: NSDateFormatter = {
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = .ShortStyle
+        formatter.timeStyle = .ShortStyle
+        formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        return formatter
+    }()
+
+    static let iso8601: NSDateFormatter = {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+        formatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
+//        formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        return formatter
+    }()
+
 }

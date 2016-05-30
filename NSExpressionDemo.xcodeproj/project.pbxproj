@@ -17,9 +17,9 @@
 		46006F081CF5406E003C8750 /* SQLLiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46006F071CF5406E003C8750 /* SQLLiteViewController.swift */; };
 		46006F0A1CF54098003C8750 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46006F091CF54098003C8750 /* BaseViewController.swift */; };
 		46006F0C1CF540B6003C8750 /* InMemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46006F0B1CF540B6003C8750 /* InMemoryViewController.swift */; };
-		46006F0E1CF540CA003C8750 /* BinaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46006F0D1CF540CA003C8750 /* BinaryViewController.swift */; };
 		46006F101CF545CA003C8750 /* 2015data.csv in Resources */ = {isa = PBXBuildFile; fileRef = 46006F0F1CF545CA003C8750 /* 2015data.csv */; };
 		46006F141CF54896003C8750 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46006F131CF54896003C8750 /* Formatters.swift */; };
+		46B23BCC1CFCFDFB00A177CC /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B23BCB1CFCFDFB00A177CC /* DateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,9 +35,9 @@
 		46006F071CF5406E003C8750 /* SQLLiteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLLiteViewController.swift; sourceTree = "<group>"; };
 		46006F091CF54098003C8750 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		46006F0B1CF540B6003C8750 /* InMemoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InMemoryViewController.swift; sourceTree = "<group>"; };
-		46006F0D1CF540CA003C8750 /* BinaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryViewController.swift; sourceTree = "<group>"; };
 		46006F0F1CF545CA003C8750 /* 2015data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2015data.csv; sourceTree = "<group>"; };
 		46006F131CF54896003C8750 /* Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		46B23BCB1CFCFDFB00A177CC /* DateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +91,7 @@
 				46006F091CF54098003C8750 /* BaseViewController.swift */,
 				46006F071CF5406E003C8750 /* SQLLiteViewController.swift */,
 				46006F0B1CF540B6003C8750 /* InMemoryViewController.swift */,
-				46006F0D1CF540CA003C8750 /* BinaryViewController.swift */,
+				46B23BCB1CFCFDFB00A177CC /* DateViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -168,9 +168,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46B23BCC1CFCFDFB00A177CC /* DateViewController.swift in Sources */,
 				46006F081CF5406E003C8750 /* SQLLiteViewController.swift in Sources */,
 				46006F0C1CF540B6003C8750 /* InMemoryViewController.swift in Sources */,
-				46006F0E1CF540CA003C8750 /* BinaryViewController.swift in Sources */,
 				46006EF91CF53191003C8750 /* DataModel.xcdatamodeld in Sources */,
 				46006EE41CF53157003C8750 /* AppDelegate.swift in Sources */,
 				46006F041CF537CA003C8750 /* Game+CoreDataProperties.swift in Sources */,
